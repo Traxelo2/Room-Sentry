@@ -1,0 +1,37 @@
+name: Release ZIP
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  build-release-zip:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build clean release ZIP
+        run: python scripts/make_release_zip.py
+
+      - name: Upload release ZIP as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: roomsentry-release-zip
+          path: dist/*.zip
+
+      - name: Attach ZIP to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
+          generate_release_notes: true

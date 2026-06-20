@@ -1,0 +1,30 @@
+docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "README.md"
+          - "docs/**"
+          - "*.md"
+python:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*.py"
+          - "requirements.txt"
+          - "pyproject.toml"
+github-actions:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**"
+windows:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*.bat"
+          - "*.ps1"
+linux:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*.sh"
+privacy:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "docs/PRIVACY.md"
+          - "SECURITY.md"

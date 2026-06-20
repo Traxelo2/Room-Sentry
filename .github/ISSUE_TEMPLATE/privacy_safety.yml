@@ -1,0 +1,30 @@
+name: Privacy or safety concern
+description: Report a non-security privacy/safety issue or policy improvement.
+title: "Privacy/Safety: "
+labels: ["privacy", "safety", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep RoomSentry local-first, permission-based, and safe to use.
+  - type: textarea
+    id: concern
+    attributes:
+      label: Concern
+      description: What privacy or safety issue did you notice?
+    validations:
+      required: true
+  - type: textarea
+    id: suggested-change
+    attributes:
+      label: Suggested change
+      description: What should be changed in code, docs, defaults, or warnings?
+    validations:
+      required: false
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: This is not an urgent private security vulnerability. If it is, I will use the security advisory flow instead.
+          required: true

@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local config/secrets
+config.json
+.env
+.env.*
+*.secret
+*.token
+
+# RoomSentry runtime data
+snapshots/
+clips/
+logs/
+events/
+runtime/
+exports/
+*.sqlite3
+*.db
+*.jsonl
+
+# Large model/media artifacts
+*.pt
+*.onnx
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.jpg
+*.jpeg
+*.png
+*.webp
+
+# Keep docs image folders available if needed
+!docs/**/*.png
+!docs/**/*.jpg
+!docs/**/*.jpeg
+!docs/**/*.webp
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build/release
+build/
+dist/
+*.zip
+
+!.github/**
